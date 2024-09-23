@@ -67,48 +67,6 @@ const prepareDeploy = async (
   program: Program<AssetManagerVault>,
   provider: Provider
 ) => {
-  // let airdropManager: string;
-
-  // try {
-  //   airdropManager = await program.provider.connection.requestAirdrop(
-  //     manager.publicKey,
-  //     0.4 * LAMPORTS_PER_SOL
-  //   );
-  // } catch (error) {
-  //   throw "airdrop manager failed";
-  // }
-
-  // const managerConfirmation = await confirmTransaction(
-  //   provider,
-  //   airdropManager
-  // );
-
-  // if (managerConfirmation.value.err) {
-  //   throw managerConfirmation.value.err;
-  // }
-
-  // let airdropCustomer: string;
-
-  // try {
-  //   airdropCustomer = await program.provider.connection.requestAirdrop(
-  //     customer.publicKey,
-  //     0.4 * LAMPORTS_PER_SOL
-  //   );
-  // } catch (error) {
-  //   console.error(error);
-
-  //   throw "airdrop customer failed";
-  // }
-
-  // const customerAirdropConfirmation = await confirmTransaction(
-  //   provider,
-  //   airdropCustomer
-  // );
-
-  // if (customerAirdropConfirmation.value.err) {
-  //   throw customerAirdropConfirmation.value.err;
-  // }
-
   const transferTx = new Transaction().add(
     SystemProgram.transfer({
       fromPubkey: manager.publicKey,
