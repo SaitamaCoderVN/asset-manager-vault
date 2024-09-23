@@ -7,6 +7,9 @@ skip-lint = false
 [programs.localnet]
 asset_manager_vault = "24SVcuivGvZ7TpGejyGTEmHHhtGcgyJjQmvCBXkK3MiJ"
 
+[programs.devnet]
+asset_manager_vault = "24SVcuivGvZ7TpGejyGTEmHHhtGcgyJjQmvCBXkK3MiJ"
+
 [registry]
 url = "https://api.apr.dev"
 
