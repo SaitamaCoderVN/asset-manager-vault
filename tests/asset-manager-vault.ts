@@ -14,7 +14,7 @@ import {
   SignatureResult,
 } from "@solana/web3.js";
 import { before } from "mocha";
-import { S3AssetManagerVault } from "../target/types/s_3_asset_manager_vault";
+import { AssetManagerVault } from "../target/types/s_3_asset_manager_vault";
 import {
   createAssociatedTokenAccount,
   createMint,
@@ -26,7 +26,7 @@ import { expect } from "chai";
 
 setProvider(AnchorProvider.env());
 
-const program = workspace.S3AssetManagerVault as Program<S3AssetManagerVault>;
+const program = workspace.AssetManagerVault as Program<AssetManagerVault>;
 const provider = getProvider();
 const PDA_VAULT_SEED = "vault";
 const PDA_CUSTOMER_VAULT_ACCOUNT_SEED = "customer";
