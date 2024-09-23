@@ -68,7 +68,7 @@ const getVaultPda = (): PublicKey => {
   return vaultPda;
 };
 
-describe("s3-asset-manager-vault", () => {
+describe("asset_manager_vault", () => {
   before(async () => {
     const aridropTx = await program.provider.connection.requestAirdrop(
       manager.publicKey,
