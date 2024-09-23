@@ -10,7 +10,7 @@ import {
   setProvider,
   workspace,
 } from "@coral-xyz/anchor";
-import { S3AssetManagerVault } from "../target/types/s_3_asset_manager_vault";
+import { AssetManagerVault } from "../target/types/s_3_asset_manager_vault";
 import {
   Keypair,
   LAMPORTS_PER_SOL,
@@ -37,7 +37,7 @@ module.exports = async function (provider: Provider) {
 
   config();
 
-  const program = workspace.S3AssetManagerVault as Program<S3AssetManagerVault>;
+  const program = workspace.AssetManagerVault as Program<AssetManagerVault>;
 
   const deployProvider = getProvider();
 
@@ -64,7 +64,7 @@ module.exports = async function (provider: Provider) {
 const prepareDeploy = async (
   manager: Keypair,
   customer: Keypair,
-  program: Program<S3AssetManagerVault>,
+  program: Program<AssetManagerVault>,
   provider: Provider
 ) => {
   // let airdropManager: string;
@@ -180,7 +180,7 @@ const prepareDeploy = async (
 };
 
 const intializeVault = async (
-  program: Program<S3AssetManagerVault>,
+  program: Program<AssetManagerVault>,
   provider: Provider,
   manager: Keypair
 ) => {
@@ -208,7 +208,7 @@ const intializeVault = async (
 };
 
 const deposit = async (
-  program: Program<S3AssetManagerVault>,
+  program: Program<AssetManagerVault>,
   provider: Provider,
   customer: Keypair,
   customerAta: PublicKey,
@@ -245,7 +245,7 @@ const deposit = async (
 };
 
 const withdraw = async (
-  program: Program<S3AssetManagerVault>,
+  program: Program<AssetManagerVault>,
   provider: Provider,
   customer: Keypair,
   customerAta: PublicKey,
@@ -281,7 +281,7 @@ const withdraw = async (
   console.log("Withdraw tx: ", tx);
 };
 
-const getVaultPda = (program: Program<S3AssetManagerVault>): PublicKey => {
+const getVaultPda = (program: Program<AssetManagerVault>): PublicKey => {
   const [vaultPda, vaultPdaBumpState] = PublicKey.findProgramAddressSync(
     [Buffer.from(PDA_VAULT_SEED)],
     program.programId
