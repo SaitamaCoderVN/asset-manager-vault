@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "programs/asset-manager-vault"
+    "programs/*"
 ]
 resolver = "2"
 
